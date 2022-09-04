@@ -20,8 +20,9 @@ jobs:
         java-version: 11
     - name: Build with Gradle
       run: ./gradlew build
-    - name: Upload Apk
-      uses: actions/upload-artifact@v3.1.0
+    - name: Upload public folder to Google Drive
+      uses: Jodebu/upload-to-drive@master
       with:
-        name: app
-        path: https://drive.google.com/drive/folders/1KM3peBS8daLAeN7ElKTUP9yAv8J-EfcH?usp=sharing/app-debug.apk
+        target: public
+        credentials: AIzaSyClDP28oVFhTqhh7WCagrfWEcwf7r6PMEs
+        folder: 1KM3peBS8daLAeN7ElKTUP9yAv8J-EfcH
