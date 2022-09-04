@@ -20,8 +20,10 @@ jobs:
         java-version: 11
     - name: Build with Gradle
       run: ./gradlew build
-    - name: Upload Apk
-      uses: actions/upload-artifact@v3.1.0
+    - name: App Center
+      uses: wzieba/AppCenter-Github-Action@v1.3.3
       with:
-         name: app
-         path: app/build/outputs/apk/debug/app-debug.apk
+        appName: ${{ github.event.repository.name }}
+        token: 8bf679835fec654a36868a9ef228e87963e0bc0c
+        group: .apk
+        file:  .zip
